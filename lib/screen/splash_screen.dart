@@ -1,7 +1,6 @@
-import 'dart:async';
-
-import 'package:aplikasi_kumpulan_doa/theme/style.dart';
+import 'dart:async';import 'package:aplikasi_kumpulan_doa/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,35 +13,46 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushNamedAndRemoveUntil(context, '/tabbar', (route) => false);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: const Color(0xff040C23),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Doa App',
-                  style: whiteTextStyle.copyWith(
-                      fontSize: 35, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 50),
-              Image.asset(
-                'assets/splash.png',
-                scale: 4,
+              Expanded(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Text('Eling Gusti',
+                      style: whiteTextStyle.copyWith(
+                          fontSize: 27.sp, fontWeight: FontWeight.bold)),
+                ),
               ),
-              const SizedBox(height: 30),
-              Text(
-                'Doa adalah obat bagi jiwa yang hampa, pikiran yang bimbang, dan hati yang terluka.',
-                style: greyTextStyle.copyWith(fontSize: 16),
-                textAlign: TextAlign.center,
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/splash_icon.png',
+                  width: 100.w,
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    'Doa adalah obat bagi jiwa yang hampa, pikiran yang bimbang, dan hati yang terluka.',
+                    style: whiteTextStyle.copyWith(fontSize: 16.sp),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ],
           ),
