@@ -29,7 +29,7 @@ class Quotes extends StatelessWidget {
                   SizedBox(
                     width: 57.w,
                     child: Text(
-                        'Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram 2. (QS. Ar-ra\'d: 28)',
+                        'Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram 222. (QS. Ar-ra\'d: 28)',
                         style: whiteTextStyle.copyWith(
                           fontWeight: FontWeight.w500,
                         )),
