@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: Colors.red,
                 body: Center(
                     child: Text(
-                  'No Internet Connections',
+                  'No Internet Connectionsss',
                   style: whiteTextStyle.copyWith(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
